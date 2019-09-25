@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHAT APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+
+<body>
+
+    <div id="Container" class="flex-column">
+
+        <div align="center" class="hidden" id=count img=https://icon-library.net/images/small-user-icon/small-user-icon-14.jpg>
+
+            <h3 style="color:orchid; font-weight: bolder;"> Active Users : <span id="counter"></span></h3>
+        </div>
+        <div align="center" id=userLists>
+            <h3>
+                <ul id="usersConnected">
+
+                </ul>
+            </h3>
+        </div>
+
+
+
+        <div id="mainContent" class="container flex-grow-1 flex-column ">
+
+            <center>
+                <section id="login" class="">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgtSTSP8ASTOPCIR7Tp5ZuHlgucCaIEIOfTfyEnQaAEttaqTU0">
+                    <h2 style="color:white">UserName</h2>
+                    <form id="loginForm" class="flex">
+                        <div class="ui left icon input">
+                            <input type="text" placeholder="Type Username Here" name="Username" id="usernameInput" placeholder="Username">
+                        </div>
+                    </form><br>
+                    <button style="background-color:white;color:black;" id="loginBtn" class="ui teal button">SignIn</button></center>
+            </section>
+
+            <section id="chat" class="flex-grow-1 flex-column hidden">
+                <button style="background-color:white;color:black; margin-left:40%; margin-right: 40%" id="logoutBtn" class="ui basic button">
+                            
+                                SignOut
+                    </button>
+                <p align="center" style="color:aliceblue;"><b><i>UserName: </i><span style="font-size:20px" id="ShowUsername"></span></b></p>
+
+
+                <div id="messagesList" class="flex-grow-1"></div>
+
+                <section id="chatroom">
+                    <section id="typingalert"></section>
+                </section><br>
+            </section>
+
+
+
+            <form id="messageForm" class="flex hidden">
+                <input type="text" name="message" id="messageInput" oninput="isTyping()" placeholder="Type Message Here" class="flex-grow-1">
+                <button style="color:black;border:black;background-color: orchid;" id="sendBtn">Send&nbsp;&nbsp;<i class="fas fa-location-arrow"></i></button>
+            </form>
+
+
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
